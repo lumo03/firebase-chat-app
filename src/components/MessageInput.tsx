@@ -7,7 +7,7 @@ const MessageInput = () => {
   const inputRef = useRef<HTMLInputElement | null>(null);
   const [user] = useAuthState(auth);
 
-  const sendMessage = async (e: FormEvent<HTMLInputElement>) => {
+  const sendMessage = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const docData = {

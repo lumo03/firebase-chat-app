@@ -1,4 +1,3 @@
-import React from "react";
 import { MessageType } from "../types";
 
 type ChatMessageProps = {

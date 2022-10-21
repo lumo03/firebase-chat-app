@@ -1,11 +1,5 @@
-import {
-  addDoc,
-  collection,
-  doc,
-  serverTimestamp,
-  setDoc,
-} from "firebase/firestore";
-import React, { FormEvent, useRef } from "react";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { FormEvent, useRef } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, db } from "../initFirebase";
 
@@ -13,7 +7,7 @@ const MessageInput = () => {
   const inputRef = useRef<HTMLInputElement | null>(null);
   const [user] = useAuthState(auth);
 
-  const sendMessage = async (e: FormEvent<HTMLElement>) => {
+  const sendMessage = async (e: FormEvent<HTMLInputElement>) => {
     e.preventDefault();
 
     const docData = {

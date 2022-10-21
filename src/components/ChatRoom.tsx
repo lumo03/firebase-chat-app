@@ -1,20 +1,18 @@
-import { useAuthState } from "react-firebase-hooks/auth";
-import { auth, db } from "../initFirebase";
-import { useCollection } from "react-firebase-hooks/firestore";
-import SignIn from "./SignIn";
-import SignOut from "./SignOut";
 import {
   collection,
-  disableNetwork,
   DocumentData,
   limit,
   orderBy,
   query,
 } from "firebase/firestore";
-import React from "react";
-import MessageInput from "./MessageInput";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { useCollection } from "react-firebase-hooks/firestore";
+import { auth, db } from "../initFirebase";
 import { MessageType } from "../types";
 import ChatMessage from "./ChatMessage";
+import MessageInput from "./MessageInput";
+import SignIn from "./SignIn";
+import SignOut from "./SignOut";
 
 const ChatRoom = () => {
   const [user] = useAuthState(auth);
